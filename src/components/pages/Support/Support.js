@@ -6,7 +6,18 @@ class Support extends Component {
 
 
 
-
+    render() {
+        return (
+          <div className="App">
+            
+            <form>
+              
+              <label>support:</label><input></input><button></button>
+             
+            </form>
+          </div>
+        );
+      }
 
 
     
