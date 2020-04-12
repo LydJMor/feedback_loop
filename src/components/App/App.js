@@ -11,7 +11,14 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
-        <form></form>
+        <form>
+          <label>feeling:</label><input></input>
+          <label>understanding</label><input></input>
+          <label>support:</label><input></input>
+          <label>comments:</label><input></input>
+          <label>flagged:</label><input></input>
+          <label>date:</label><input></input>
+        </form>
       </div>
     );
   }
