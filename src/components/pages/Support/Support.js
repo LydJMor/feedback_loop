@@ -4,7 +4,12 @@ import axios from 'axios'
 
 class Support extends Component {
 
-
+    state = {
+        newFeedback: {
+          support: '',
+          
+        }
+      }
 
     render() {
         return (

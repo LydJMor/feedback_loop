@@ -1,22 +1,26 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import {connect, useStore} from 'react-redux';
 import axios from 'axios'
 
-class Feeling extends Component {
+const Feeling = (props) => {
 
+   
 
-
-
-    render() {
+    const store = useStore()
+    console.log(store.getState())
         return (
           <div className="Feeling">
            
             <form>
-              <label>feeling:</label><input></input><button></button>
+              <label>feeling:</label>
+              <input required placeholder="Feeling" 
+            //   value={this.state.newFeedback.Feeling}
+            //   onChange={(event) => this.handleChangeForFeeling('Feeling:', event)}
+          /><button></button>
             </form>
           </div>
         );
-      }
+      
 
     
 }

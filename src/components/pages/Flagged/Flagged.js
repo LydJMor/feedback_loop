@@ -4,7 +4,12 @@ import axios from 'axios'
 
 class Flagged extends Component {
 
-
+    state = {
+        newFeedback: {
+          flagged: '',
+          
+        }
+      }
 
     render() {
         return (

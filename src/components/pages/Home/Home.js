@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import {useDispatch, connect} from 'react-redux';
 
 
-class Home extends Component {
-  render() {
-    return (
+
+
+const Home = () =>{
    
+    const dispatch = useDispatch();
+
+
+ 
+    return (
+
         <>
-          <div className="App">
-            <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-            </header>
-         <br/>
+         
          <h3>Let us know how your day went!</h3>
          <p>Let's start!</p>
             <form>
-              <label>Today's Date:</label><input type="datetime-local"></input><button >Next</button>
+              <label>Today's Date:</label> 
+              <input type="date" required  
+              onChange= {(event) => {dispatch({type: "date", payload: event.target.value})}}
+          />
+            <Link to='/feeling'>Submit</Link>
             </form>
-          </div>
         </>
     );
   }
-}
 
-export default Home;
+
+export default connect()(Home);
