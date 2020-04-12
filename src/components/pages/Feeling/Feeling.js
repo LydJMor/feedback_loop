@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios'
 
-class Flagged extends Component {
+class Feeling extends Component {
 
 
 
@@ -17,4 +17,4 @@ class Flagged extends Component {
 
 
 
-export default connect()(Flagged);
+export default connect()(Feeling);
