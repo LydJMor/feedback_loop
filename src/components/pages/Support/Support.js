@@ -8,7 +8,7 @@ class Support extends Component {
 
     render() {
         return (
-          <div className="App">
+          <div className="Support">
             
             <form>
               

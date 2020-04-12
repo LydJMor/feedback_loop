@@ -9,7 +9,7 @@ class Understanding extends Component {
 
     render() {
         return (
-          <div className="App">
+          <div className="Understanding">
             <form>
               <label>understanding</label><input></input><button></button>
             </form>

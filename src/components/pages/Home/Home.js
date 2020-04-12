@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
+
 
 class Home extends Component {
   render() {
@@ -13,8 +13,10 @@ class Home extends Component {
           <h4><i>Don't forget it!</i></h4>
             </header>
          <br/>
+         <h3>Let us know how your day went!</h3>
+         <p>Let's start!</p>
             <form>
-              <label>date:</label><input></input><button></button>
+              <label>Today's Date:</label><input type="datetime-local"></input><button >Next</button>
             </form>
           </div>
         </>
