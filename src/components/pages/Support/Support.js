@@ -1,28 +1,37 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import axios from 'axios'
+import React from 'react';
+import {useDispatch, connect} from 'react-redux';
 
-class Support extends Component {
 
-    state = {
-        newFeedback: {
-          support: '',
-          
-        }
-      }
+const Support = (props) => {
+     //handles dispatch
+    const dispatch = useDispatch();
 
-    render() {
+        //returns support dropdown menuu
         return (
           <div className="Support">
             
-            <form>
+            <form onSubmit = {(event) => {
+            dispatch({type: 'support', payload: event.target.support.value});
+            
+            props.history.push('/review')
+        }}>
               
-              <label>support:</label><input></input><button></button>
+              <label>How well did you feel supported by staff?</label>
+              <select required id="support">
+                    <option value= '1'>1</option>
+                    <option value= '2'>2</option>
+                    <option value= '3'>3</option>
+                    <option value= '4'>4</option>
+                    <option value= '5'>5</option>
+                </select>
+                <br/>
+                <br/>
+              <input type='submit' value='Submit'/>
              
             </form>
           </div>
         );
-      }
+      
 
 
     

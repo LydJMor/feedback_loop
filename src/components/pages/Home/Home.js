@@ -1,33 +1,27 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from "react-router-dom";
+import React from 'react';
 import {useDispatch, connect} from 'react-redux';
 
-
-
-
-const Home = () =>{
-   
+const Home = (props) =>{
+    //handles dispatch
     const dispatch = useDispatch();
-
-
- 
+    //return date field
     return (
-
         <>
-         
          <h3>Let us know how your day went!</h3>
          <p>Let's start!</p>
-            <form>
+         <form onSubmit = {(event) => {
+            dispatch({type: 'date', payload: event.target.date.value});
+            
+            props.history.push('/feeling')
+        }}>
               <label>Today's Date:</label> 
-              <input type="date" required  
-              onChange= {(event) => {dispatch({type: "date", payload: event.target.value})}}
-          />
-            <Link to='/feeling'>Submit</Link>
+              <input type="date" required id="date"/>
+              <br/>
+              <br/>
+              <input type='submit' value='Submit'/>
             </form>
         </>
     );
   }
-
 
 export default connect()(Home);

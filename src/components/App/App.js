@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from "react-router-dom";
+
+
+//page imports
 import Home from '../pages/Home/Home'
 import Feeling from '../pages/Feeling/Feeling';
 import Comments from '../pages/Comments/Comments';
 import Understanding from '../pages/Understanding/Understanding';
 import Flagged from '../pages/Flagged/Flagged'
 import Support from '../pages/Support/Support'
+import Review from '../pages/Review/Review'
 
-class App extends Component {
+const App = (props) => {
 
-  componentDidMount() {
-    
-  }
-
- 
-
-  render() {
     return (
 
       <div className="App">
@@ -33,10 +29,11 @@ class App extends Component {
       <Route path='/flagged' component={Flagged} />
       <Route path='/support' component={Support} />
       <Route path='/understanding' component={Understanding} />
+      <Route path='/review' component={Review} />
     </Router>
     </div>
     );
-  }
+  
 }
 
 export default App;

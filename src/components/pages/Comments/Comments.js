@@ -1,25 +1,28 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import axios from 'axios'
-
-class Comments extends Component {
+import React from 'react';
+import {useDispatch, connect} from 'react-redux';
 
 
-    render() {
-        return (
-          <div className="App">
-            <form>
-              <label>comments:</label><input></input><button></button>
-            </form>
+const Comments = (props) => {
+     //handles dispatch
+    const dispatch = useDispatch();
+
+        //returns comment input field
+      return (
+          <div>
+            <form onSubmit = {(event) => {
+            dispatch({type: 'comments', payload: event.target.comment.value});
+            
+            props.history.push('/flagged')
+            }}>
+        <label>Comments:</label>
+          <input type="text" id="comment"></input>
+          <br/>
+          <br/>
+            <input type='submit' value='Submit'/>
+        </form>
           </div>
         );
-      }
-
 }
-
-
-
-
 
 
 export default connect()(Comments);

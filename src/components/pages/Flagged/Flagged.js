@@ -1,33 +1,30 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import axios from 'axios'
+import React from 'react';
+import {useDispatch, connect} from 'react-redux';
 
-class Flagged extends Component {
 
-    state = {
-        newFeedback: {
-          flagged: '',
-          
-        }
-      }
+const Flagged = (props) => {
+     //handles dispatch
+    const dispatch = useDispatch();
 
-    render() {
+    //returns flagged checkbox
         return (
           <div className="Flagged">
             <br/>
-            <form>
-              <label>flagged:</label><input></input><button></button>
+            <form onSubmit = {(event) => {
+            dispatch({type: 'flagged', payload: event.target.flagged.value});
+            
+            props.history.push('/support')
+        }}>
+              <label>flag if you need help:</label><input type="checkbox" id="flagged"></input>
+              <br/>
+              <br/>
+              <input type='submit' value='Submit'/>
             </form>
           </div>
         );
-      }
-
-
+      
     
 }
-
-
-
 
 
 
